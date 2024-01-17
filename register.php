@@ -12,7 +12,7 @@
 
     <table style="border: 2px solid black; width: 40%;" align="center">
         <tr><td colspan="2" style="background-color: #6CD2FE;">กรอกข้อมูล </td></tr>
-        <form action="index.html" method="post" onsubmit="return validateForm()">
+        <form action="index.php" method="post" onsubmit="return validateForm()">
             <tr><td>ชื่อบัญชี : </td><td><input type="text" name="username" size="30" required></td></tr>
             <tr><td>รหัสผ่าน : </td><td><input type="password" name="password" size="30" required></td></tr>
             <tr><td>ชื่อ-นามสกุล : </td><td><input type="text" name="Fullname" size="30" required></td></tr>
@@ -25,7 +25,7 @@
             <tr><th colspan="2"><input type="submit" value="สมัครสมาชิก"  ></th></tr>
         </form>
     </table>
-    <p style="text-align: center;"><a href="index.html">กลับหน้าหลัก</a></p>
+    <p style="text-align: center;"><a href="index.php">กลับหน้าหลัก</a></p>
 
 
 </body>
