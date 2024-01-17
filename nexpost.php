@@ -12,7 +12,7 @@
     <h1 style="text-align: center;">Webboard Paramee</h1><hr>
     <?php
     session_start();
-    if(isset($_SESSION['id'])&& $_SESSION['role'] == 'a'||$_SESSION['role'] == 'm'){
+    if(isset($_SESSION['id'])){
         echo"ผู้ใช้ : $_SESSION[username]";
     }else{
         header("location:index.php");
