@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['id'])){
+        header("location:index.php");
+        die();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +32,7 @@
         <tr><td colspan="2" style="background-color: #6CD2FE;">แสดงความคิดเห็น </td></tr>
         <form>
             <tr><th colspan="2"><textarea rows="4" cols="70"></textarea></th></tr>
-            <tr><th colspan="2"><input type="submit" value="ส่งข้อความ" ></th></tr>
+            <tr><td colspan="2" align="center"><input type="submit" value="ส่งข้อความ" ></td></tr>
         </form>
         
     </table>
