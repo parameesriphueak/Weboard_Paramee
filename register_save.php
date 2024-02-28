@@ -1,16 +1,25 @@
 <?php 
+session_start();
 $login=$_POST['username'];
-$passwd=$_POST['password'];
+$passwd=sha1($_POST['password']);
 $name=$_POST['Fullname'];
 $gender=$_POST['gender'];
 $email=$_POST['email'];
 
 $conn=new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
+$sql="SELECT * FROM user where login='$login'";
+$result=$conn->query($sql);
 
-$sql="INSERT INTO user (login, password, name, gender, email, role)
-VALUES ('$login','$passwd','$name','$gender','$email','m')";
-$conn->exec($sql);
+if($result->rowCount()==1){
+    $_SESSION['add_login']="error";
+}else{
+    $sql1="INSERT INTO user (login, password, name, gender, email, role)
+    VALUES ('$login','$passwd','$name','$gender','$email','m')";
+    $conn->exec($sql1);
+    $_SESSION['add_login']="success";
+}
+
 $conn=null;
-header("location:login.php");
+header("location:register.php");
 die();
 ?>
